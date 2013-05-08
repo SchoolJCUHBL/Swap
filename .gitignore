@@ -1,0 +1,4 @@
+#log files niet committen
+*.log
+*.exe
+*.bat
