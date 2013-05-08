@@ -1,2 +1,3 @@
 #log files niet committen
-*.log
+**\*.log
+apache2/logs/*
