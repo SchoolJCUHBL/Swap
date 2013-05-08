@@ -56,7 +56,7 @@
 			//connect database
 			$db = new PDO('mysql:host=localhost;port=3307;dbname=hblwissels','root','usbw');
 			//prepare het statement zodat injection onmogelijk is.
-			$stmt = $db->prepare("INSERT INTO Wissels (leerlingnummer, datum, vanuur, naaruur, commentaar) VALUES (:leerlingnummer, :datum, :vanuur, :naaruur, :commentaar)");
+			$stmt = $db->prepare("INSERT INTO Wissels (leerlingnummer, datum, vanuur, naaruur, commentaar, OK) VALUES (:leerlingnummer, :datum, :vanuur, :naaruur, :commentaar, 0)");
 			//bind de parameters aan het statement
 			$stmt->bindParam(':leerlingnummer', $lrlngnr);
 			$stmt->bindParam(':datum', $datum);
@@ -96,7 +96,7 @@
 			//connect database
 			$db = new PDO('mysql:host=localhost;port=3307;dbname=hblwissels','root','usbw');
 			//prepare het statement zodat injection onmogelijk is.
-			$stmt = $db->prepare("UPDATE Wissels SET vanuur=:vanuur, naaruur=:naaruur, commentaar=:commentaar WHERE leerlingnummer=:leerlingnummer AND datum=:datum AND id=:id");
+			$stmt = $db->prepare("UPDATE Wissels SET vanuur=:vanuur, naaruur=:naaruur, commentaar=:commentaar, OK=0 WHERE leerlingnummer=:leerlingnummer AND datum=:datum AND id=:id");
 			//bind de parameters aan het statement
 			$stmt->bindParam(':leerlingnummer', $lrlngnr);
 			$stmt->bindParam(':datum', $datum);
@@ -131,5 +131,24 @@
 		}
 		$db = NULL;
 	}
-
+	
+		//PDO accept functie
+	function PDOaccept($id, $lrlngnr, $accept) {
+		try {
+			//connect database
+			$db = new PDO('mysql:host=localhost;port=3307;dbname=hblwissels','root','usbw');
+			//prepare het statement zodat injection onmogelijk is.
+			$stmt = $db->prepare("UPDATE Wissels SET OK=:OK WHERE leerlingnummer=:leerlingnummer AND id=:id");
+			//bind de parameters aan het statement
+			$stmt->bindParam(':leerlingnummer', $lrlngnr);
+			$stmt->bindParam(':OK', $accept);
+			$stmt->bindParam(':id', $id);
+			//voer het statement uit
+			$resultaat = $stmt->execute();
+		}
+		catch(PDOException $e) {
+			echo $e->getMessage();
+		}
+		$db = NULL;
+	}
 ?>
