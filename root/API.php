@@ -8,47 +8,27 @@
 
 //functie voor het snel genereren van dropdown menu's, deze is te gebruiken door:
 // require_once API.php   in je php bestand te zetten
-// DropMenu(test, 9); maakt een dropdown menu met $_POST name "test" met waarden van 1 tot 9
-// Dropmenu(test, 2, 9); maakt een dropdown menu met $_POST name "test" met waarden van 2 tot 9
+// EZDropMenu(test, 9); maakt een dropdown menu met $_POST name "test" met waarden van 1 tot 9
+// LongDropmenu(test, 2, 9); maakt een dropdown menu met $_POST name "test" met waarden van 2 tot 9
 // de begin waarde default dus naar 1, naast de uren kiezen kunnen we dit evt ook voor datums gebruiken.
-//
-	function DropMenu() {
-	
-	//vang de argumenten en kijk of het er 2 of 3 zijn, en of het wel string+nummer of string+nummer+nummer is, anders call de error
-	$numArgs = func_num_args();
-	switch ($numArgs) {
-		case 2:
-			$name = func_get_arg(0);
-			$end = func_get_arg(1);
-			$start = 1;
-			if (is_string($name) && is_numeric($end)) {
-				break;
-			}
-			else {
-				ArgError();
-			}
-		case 3:
-			$name = func_get_arg(0);
-			$start = func_get_arg(1);
-			$end = func_get_arg(2);
-			if (is_string($name) && is_numeric($end) && is_numeric($start)) {
-				break;
-			}
-			else {
-				ArgError();
-			}
-		default:
-			ArgError();
+
+	function EZDropMenu($name, $end) {
+		DropMenu($name, 1, $end);
 	}
 	
-	//Deze for loop bouwt het dropdown menu.
-	echo "<select name=" , $name , ">";
-		for ($i = $start; $i <= $end; $i++) {
-			echo "<option value=" , $i , ">$i</option>";
+	function DropMenu($name, $start, $end) {
+		if (is_string($name) && is_numeric($end) && is_numeric($start)) {
+			//Deze for loop bouwt het dropdown menu.
+			echo "<select name=" , $name , ">";
+			for ($i = $start; $i <= $end; $i++) {
+				echo "<option value=" , $i , ">$i</option>";
+			}
+			echo "</select>";
 		}
-	echo "</select>";
+		else {
+			ArgError();
+		}
 	}
-	
 	
 	//PDO insert functie
 	function PDOinsert($lrlngnr, $datum, $vanuur, $naaruur, $commentaar) {
