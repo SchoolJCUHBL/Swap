@@ -31,15 +31,16 @@
 	}
 	
 	//PDO insert functie
-	function PDOinsert($lrlngnr, $datum, $vanuur, $naaruur, $commentaar) {
+	function PDOinsert($lrlngnr, $datum, $dag, $vanuur, $naaruur, $commentaar) {
 		try {
 			//connect database
 			$db = new PDO('mysql:host=localhost;port=3307;dbname=hblwissels','root','usbw');
 			//prepare het statement zodat injection onmogelijk is.
-			$stmt = $db->prepare("INSERT INTO Wissels (leerlingnummer, datum, vanuur, naaruur, commentaar, OK) VALUES (:leerlingnummer, :datum, :vanuur, :naaruur, :commentaar, 0)");
+			$stmt = $db->prepare("INSERT INTO Wissels (leerlingnummer, datum, dag, vanuur, naaruur, commentaar, OK) VALUES (:leerlingnummer, :datum, :dag, :vanuur, :naaruur, :commentaar, 0)");
 			//bind de parameters aan het statement
 			$stmt->bindParam(':leerlingnummer', $lrlngnr);
 			$stmt->bindParam(':datum', $datum);
+			$stmt->bindParam(':dag', $dag);
 			$stmt->bindParam(':vanuur', $vanuur);
 			$stmt->bindParam(':naaruur', $naaruur);
 			$stmt->bindParam(':commentaar', $commentaar);
@@ -76,10 +77,9 @@
 			//connect database
 			$db = new PDO('mysql:host=localhost;port=3307;dbname=hblwissels','root','usbw');
 			//prepare het statement zodat injection onmogelijk is.
-			$stmt = $db->prepare("UPDATE Wissels SET vanuur=:vanuur, naaruur=:naaruur, commentaar=:commentaar, OK=0 WHERE leerlingnummer=:leerlingnummer AND datum=:datum AND id=:id");
+			$stmt = $db->prepare("UPDATE Wissels SET vanuur=:vanuur, naaruur=:naaruur, commentaar=:commentaar, OK=0 WHERE leerlingnummer=:leerlingnummer AND id=:id");
 			//bind de parameters aan het statement
 			$stmt->bindParam(':leerlingnummer', $lrlngnr);
-			$stmt->bindParam(':datum', $datum);
 			$stmt->bindParam(':vanuur', $vanuur);
 			$stmt->bindParam(':naaruur', $naaruur);
 			$stmt->bindParam(':commentaar', $commentaar);
