@@ -5,7 +5,7 @@ require_once("/global/API.php");
 <!DOCTYPE html>
 <html>
 	<head>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="/global/style.css">
 		<title>Index</title>
 	</head>
 
