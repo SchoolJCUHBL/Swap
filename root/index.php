@@ -10,6 +10,7 @@ require_once("/global/API.php");
 	</head>
 
 	<body>
+	<?php Constructheader($header); ?>
     	<p>
 			<?php 
             // tijdelijke testcode om te laten zien hoe deze twee functies werken
