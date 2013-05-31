@@ -1,5 +1,5 @@
 <?php
-require_once("API.php");
+require_once("/global/API.php");
 ?>
 
 <!DOCTYPE html>
