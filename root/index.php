@@ -1,5 +1,5 @@
 <?php
-require_once("/global/API.php");
+require_once("/global/HTMLtools.php");
 ?>
 
 <!DOCTYPE html>
