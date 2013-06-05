@@ -1,0 +1,18 @@
+div#wrap {
+	width: 350px;
+	margin: 0 auto;
+	background: #009900;
+}
+div#login {
+	width: 350px;
+	margin: 0 auto;
+	background: #009900;
+}
+body {
+	margin-top: 20%;
+	font-size: 18px;
+	line-height: 22px;
+	font-family: Helvetica, Arial, sans-serif;
+	background: #990000;
+	text-align: left;
+}

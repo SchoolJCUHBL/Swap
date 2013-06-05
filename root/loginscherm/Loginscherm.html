@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<link rel="stylesheet" type="text/css" href="sehoofd.css">
+<!--[if lt IE 9]>
+<script
+src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+<meta charset="utf-8">
+<title>Informatica</title>
+<script type="text/javascript">
+function controleer()
+{
+	var fout = false;
+	if(document.contact.naam.value == "")
+	{ 
+		alert("Je hebt niks ingevuld."); 
+		fout = true;
+	}
+
+	if(document.contact.email.value =="" || document.contact.email.value.indexOf("@") == -1) { 
+		alert("Dit e-mailadres is niet geldig."); 
+		fout = true;
+		
+	} else if(document.contact.email.value =="" || !(document.contact.email.value.indexOf(".nl") != -1 || document.contact.email.value.indexOf(".com") != -1)) { 
+	  alert("Dit e-mailadres is niet geldig."); 
+	  fout = true;
+	}
+
+  if(document.contact.naam.value.length != 5)
+	{ alert ("Uw leerlingennummer is te kort of te lang."); 
+	fout = true;
+	}
+	
+	
+	if (!fout) {
+		document.location = "po eindexamen2.html";
+	}
+	
+}
+
+
+</script>
+</head>
+<body>
+<div id="wrap">
+<form name="contact" method="post">
+<table border=2>
+<tr>
+<td>Leerlingennummer:</td>
+<td><input type="text" name="naam" /></td>
+</tr>
+<tr>
+<td>Wachtwoord:</td>
+<td><input type="text" name="email"></td>
+</tr>
+</table>
+<br>
+<br>
+<div id="login">
+<input type="button" value="inloggen" onClick="controleer()">
+</div>
+</form>
+</div>
+</body>
+</html>
