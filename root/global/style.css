@@ -1,10 +1,19 @@
 body {
-  /*ALTIJD INSPRINGEN VICTOR*/
   background-color:#F7F2E0;
+  font-family:"Arial", "Verdana", "Sans-serif", "Lucida Console";
 }
 
 p {
-  /*Victortje toch*/
-  font-family:"Arial", "Verdana", "Sans-serif", "Lucida Console";
   font-size:20px;
+}
+
+.constructedheader {
+	text-align: center;
+	margin: 0 auto;
+	float: center;
+}
+
+#headerimg {
+	float: left;
+	#margin: 0 auto;
 }

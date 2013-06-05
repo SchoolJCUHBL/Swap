@@ -31,7 +31,7 @@
 	}
 	
 	function Constructheader($header) {
-		echo "<header><IMG src='/global/hbllogo.png' class='headerimg'><h1>$header</h1></header>"
+		echo "<header id='headerimg' class='constructedheader'><IMG src='/global/hbllogo.png'></header><header class='constructedheader'><h1>$header</h1></header>";
 	}
 	
 ?>

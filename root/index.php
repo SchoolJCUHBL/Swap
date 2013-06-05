@@ -1,5 +1,5 @@
 <?php
-require_once("/global/API.php");
+require_once("/global/HTMLtools.php");
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +11,8 @@ require_once("/global/API.php");
 
 	<body>
 	<?php Constructheader("Test"); ?>
+		<br>
+		<hr>
     	<p>
 			<?php 
             // tijdelijke testcode om te laten zien hoe deze twee functies werken
