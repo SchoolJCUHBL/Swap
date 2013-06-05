@@ -133,7 +133,7 @@
 	}
 	
 	function Constructheader($header) {
-		echo "<header><IMG src="/global/hbllogo.jpg" class="headerimg"><h1>$header</h1></header>"
+		echo "<header><IMG src="/global/hbllogo.png" class="headerimg"><h1>$header</h1></header>"
 	}
 	
 ?>
