@@ -1,87 +1,84 @@
- /*Verdomme Victor ook in css moet je inspringen! pfffffffff*/
- *{
+*{
 	margin: 0;
-	padding: 0; }
-	header, nav, section {
-	  display: block;
-	}
+	padding: 0;
+	-webkit-user-select: none;
+}
 
-	body {
-	  margin-top: 0;
-	  margin-right: auto;
-	  margin-bottom: auto;
-	  margin-left: auto;
-	  width: 940px;
-	  font-size: 13px;
-	  line-height: 22px;
-	  font-family: Helvetica, Arial, sans-serif;
-	  background: #E0F8F7;
-	}
+header, nav, section{
+	display: block;
+}
 
-	h1 {
-	  font-size: 28px;
-	  line-height: 44px;
-	  padding-top: 22px;
-	  padding-right: 0px;
-	  padding-bottom: 22px;
-	  padding-left: 0px;
-	}
-	p{
+body{
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+	padding-left: 20px;
+	width: 940px;
+	font-size: 13px;
+	line-height: 22px;
+	font-family: Helvetica, Arial, sans-serif;
+	background: #E0F8F7;
+}
+
+h1{
+	font-size: 28px;
+	line-height: 44px;
+	padding-top: 22px;
+	padding-right: 0px;
 	padding-bottom: 22px;
-	}
+	padding-left: 0px;
+}
 
+p{
+	padding-bottom: 22px;
+}
 
-	header img {
-float: left;
-height: 44px;
-padding-top: 22px;
-padding-bottom: 22px;
-padding-right: 20px;
-	}
-	
-	nav {
-	  position: absolute;
+textarea{
+	resize: none;
+}
 
+header img{
+	float: left;
+	height: 54px;
+	padding-top: 22px;
+	padding-bottom: 22px;
+	padding-right: 20px;
+	padding-left: 0px;
+}
+
+nav{
+	position: absolute;
 	left: 0;
+	width: 100%;
+	background: #01DF74
+}
 
-	  width: 100%;
+nav ul{
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+	width: 940px;
+	list-style: none;
+}
 
-	  background: #01DF74;
-	}
-	nav ul {
+nav ul li{
+	float: left;
+}
 
-	  margin-top: 0;
-	  margin-right: auto;
-	  margin-bottom: auto;
-	  margin-left: auto;
-	  width: 940px;
+nav ul li a{
+	display: block;
+	margin-right: 20px;
+	width: 140px;
+	font=size: 14px;
+	line-height: 44px;
+	text-align: center;
+	text-decoration: none;
+	color: #000000;
+}
 
-	  list-style: none;
+nav ul li a:hover{
+	color: #ffffff;
+}
 
-	}
-	nav ul li {
-	  float: left;
-	}
-	nav ul li a {
-	  display: block;
-	  margin-right: 20px;
-	  width: 140px;
-	  font-size: 14px;
-	  line-height: 44px;
-	  text-align: center;
-	  text-decoration: none;
-	  color: #000000;
-	}
-	nav ul li a:hover {
-
-	  color: #ffffff;
-	}
-	nav ul li.selected a {
-
-	  color: #ffffff;
-	  
-	 #inhoud {
-	  position: relative;
-	  margin-top: 66px;
-	  padding: 44px;
-	}
