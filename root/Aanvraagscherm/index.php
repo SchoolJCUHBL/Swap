@@ -26,7 +26,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/global/HTMLtools.php");
 		<br>
 		<br> 
     
-		<form name="info" method="POST">
+		<form name="input" action="insturen.php" method="POST">
   			<input type="date" name="datum">
   			
   			<br>
