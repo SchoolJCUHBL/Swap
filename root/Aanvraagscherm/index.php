@@ -1,16 +1,18 @@
+<?php
+require_once($_SERVER['DOCUMENT_ROOT']."/global/HTMLtools.php");
+?>
+
 <!DOCTYPE HTML>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="aanvraagscherm.css">
+		<link rel="stylesheet" type="text/css" href="/global/style.css">
 		<title>Aanvraagscherm</title>
 	</head>
 
 	<body>
-		<header id="bovenste">
-			<IMG src="hbllogo.png" height="54" width="164"> 
-			<h1>Aanvraagscherm</h1>     
-		</header>
+		<?php Constructheader("Test"); ?>
 		
 		<nav id="menu">
 			<ul>

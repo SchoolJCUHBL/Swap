@@ -1,5 +1,5 @@
 <?php
-require_once("/global/HTMLtools.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/global/HTMLtools.php");
 ?>
 
 <!DOCTYPE html>
