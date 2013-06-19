@@ -21,6 +21,7 @@
 			echo $e->getMessage();
 		}
 		$db = NULL;
+		return $resultaat;
 	}
 	
 	//PDO select functie
@@ -39,6 +40,7 @@
 			echo $e->getMessage();
 		}
 		$db = NULL;
+		return $resultaat;
 	}
 	
 	//PDO update functie
@@ -61,6 +63,7 @@
 			echo $e->getMessage();
 		}
 		$db = NULL;
+		return $resultaat;
 	}
 	
 	//PDO delete functie opzich zou het id hier genoeg zijn maar om zeker alleen deze persoon te hebben doen we het leerlingnummer ook
@@ -80,6 +83,7 @@
 			echo $e->getMessage();
 		}
 		$db = NULL;
+		return $resultaat;
 	}
 	
 		//PDO accept functie
@@ -100,6 +104,7 @@
 			echo $e->getMessage();
 		}
 		$db = NULL;
+		return $resultaat;
 	}
 
 ?>
