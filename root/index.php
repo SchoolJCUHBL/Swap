@@ -11,8 +11,6 @@ require_once("/global/HTMLtools.php");
 
 	<body>
 	<?php Constructheader("Test"); ?>
-		<br>
-		<hr>
     	<p>
 			<?php 
             // tijdelijke testcode om te laten zien hoe deze twee functies werken

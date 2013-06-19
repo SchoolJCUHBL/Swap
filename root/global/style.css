@@ -1,19 +1,20 @@
 body {
-  background-color:#F7F2E0;
-  font-family:"Arial", "Verdana", "Sans-serif", "Lucida Console";
+	background-color:#F7F2E0;
+	font-family:"Arial", "Verdana", "Sans-serif", "Lucida Console";
 }
 
 p {
-  font-size:20px;
+	font-size:20px;
+}
+
+header{
+	width: 100%
 }
 
 .constructedheader {
-	text-align: center;
-	margin: 0 auto;
-	float: center;
+	float: left;
 }
 
-#headerimg {
-	float: left;
-	#margin: 0 auto;
+h1.constructedheader {
+	margin-left: 20px;
 }
