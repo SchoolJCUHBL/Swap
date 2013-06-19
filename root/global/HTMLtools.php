@@ -21,7 +21,7 @@
 			//Deze for loop bouwt het dropdown menu.
 			echo "<select name=" , $name , ">";
 			for ($i = $start; $i <= $end; $i++) {
-				echo "<option value=" , $i , ">$i</option>";
+				echo "<option value=" , $i , ">$i","e","</option>";
 			}
 			echo "</select>";
 		}

@@ -32,30 +32,13 @@ require_once($_SERVER['DOCUMENT_ROOT']."/global/HTMLtools.php");
   			<br>
 			<br>
 
-			Van het 
-			<select name="vanUur">
-				<option value="1">1e</option>
-				<option value="2">2e</option>
-				<option value="3">3e</option>
-				<option value="4">4e</option>
-				<option value="5">5e</option>
-				<option value="6">6e</option>
-				<option value="7">7e</option>
-				<option value="8">8e</option>
-				<option value="9">9e</option>
-			</select>
+			Van het <?php
+			EZDropMenu("vanUur", 9);
+			?>
 			naar het 
-			<select name="naarUur">
-				<option value="1">1e</option>
-				<option value="2">2e</option>
-				<option value="3">3e</option>
-				<option value="4">4e</option>
-				<option value="5">5e</option>
-				<option value="6">6e</option>
-				<option value="7">7e</option>
-				<option value="8">8e</option>
-				<option value="9">9e</option>
-			</select>
+			<?php
+			EZDropMenu("naarUur", 9);
+			?>
 			uur
   
 			<br>
