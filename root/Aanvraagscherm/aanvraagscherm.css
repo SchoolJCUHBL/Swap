@@ -14,3 +14,7 @@ p{
 textarea{
 	resize: none;
 }
+
+hr{
+	visibility:hidden;
+}
