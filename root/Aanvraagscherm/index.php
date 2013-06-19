@@ -62,11 +62,10 @@ require_once($_SERVER['DOCUMENT_ROOT']."/global/HTMLtools.php");
 			<br>
 	
 			Opmerking (evt.)
-			<br><i>max 150 tekens</i>
 
 			<br>
 	
-			<textarea name="Opmerking" rows=6 cols=24 maxlength=150></textarea>
+			<textarea name="Opmerking" rows=6 cols=24 maxlength=150 placeholder="max 150 tekens"></textarea>
 
 			<br>
 
