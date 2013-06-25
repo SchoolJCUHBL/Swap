@@ -1,6 +1,6 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT']."/global/HTMLtools.php");
-?>8
+?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -34,8 +34,6 @@ src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
           <td align="center"  width="84">           
                  </td>
           <td align="left" width="170"> <input type="submit" value="Login">      
- <input
-type="Reset">
 </td>
     </tr>
   </table>
