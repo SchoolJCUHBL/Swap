@@ -21,9 +21,8 @@ if ($statement->execute() && $row = $statement->fetch())
     if ( $row['password'] === $password )
     {
 		$_SESSION['leerlingnummer'] = $leerlingnummer;
-     
-
         header('Location: /aanvraagscherm/index.php');
+		exit();
     }
 	else {
 		echo 'login error';
