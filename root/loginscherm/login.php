@@ -15,8 +15,6 @@ $sql = 'SELECT leerlingnummer, password FROM inlog WHERE leerlingnummer = :leerl
 $statement = $db->prepare($sql);
 $statement->bindParam(':leerlingnummer', $leerlingnummer, PDO::PARAM_STR);
 
-echo 'login error';
-
 if ($statement->execute() && $row = $statement->fetch())
 {
 
@@ -27,6 +25,11 @@ if ($statement->execute() && $row = $statement->fetch())
 
         header('Location: /aanvraagscherm/index.php');
     }
+	else {
+		echo 'login error';
+	}
 }
-
+else {
+		echo 'login error';
+}
 ?>

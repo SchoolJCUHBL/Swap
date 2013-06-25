@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `wissels` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `leerlingnummer` int(6) NOT NULL,
   `datum` date NOT NULL,
-  `dag` varchar(2) NOT NULL,
+  `dag` varchar(3) NOT NULL,
   `vanuur` int(1) NOT NULL,
   `naaruur` int(1) NOT NULL,
   `commentaar` text NOT NULL,
