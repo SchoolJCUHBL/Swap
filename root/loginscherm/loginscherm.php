@@ -4,6 +4,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/global/HTMLtools.php");
 <!DOCTYPE html>
 <html lang="nl">
 <head>
+<link rel="stylesheet" type="text/css" href="/global/style.css">
 <link rel="stylesheet" type="text/css" href="loginscherm.css">
 <!--[if lt IE 9]>
 <script
@@ -12,7 +13,7 @@ src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
 <![endif]-->
 <meta charset="utf-8">
 <title>Informatica</title>
-<link rel="stylesheet" type="text/css" href="/global/style.css">
+
 </head>
 <body>
 <br>
