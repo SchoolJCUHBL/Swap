@@ -24,7 +24,7 @@ src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
       <td align="center" height="24" width="282">Gebruiker:</td>
       <td align="left" height="24" width="170">
  
-       <input name="leerlingnummer" type="text"  type="hidden" value="klant">
+       <input name="leerlingnummer" type="text"  type="hidden" value="">
  
      <tr>
           <td align="center" height="24" width="84">Inlogcode:</td>

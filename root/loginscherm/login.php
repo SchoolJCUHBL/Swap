@@ -15,7 +15,7 @@ $sql = 'SELECT leerlingnummer, password FROM inlog WHERE leerlingnummer = :leerl
 $statement = $db->prepare($sql);
 $statement->bindParam(':leerlingnummer', $leerlingnummer, PDO::PARAM_STR);
 
-$output = 'login error';
+echo 'login error';
 
 if ($statement->execute() && $row = $statement->fetch())
 {
@@ -25,10 +25,8 @@ if ($statement->execute() && $row = $statement->fetch())
 		$_SESSION['leerlingnummer'] = $leerlingnummer;
      
 
-        $output = 'logged in';
+        header('Location: /aanvraagscherm/index.php');
     }
 }
-
-echo $output;
 
 ?>
