@@ -16,17 +16,19 @@ require_once($_SERVER['DOCUMENT_ROOT']."/global/HTMLtools.php");
 		<p>
 			<nav id="menu">
 				<ul>
-					<li><a href="Start.html">Start</a></li>
-					<li><a href="Verplaatsen.html">Verplaatsen</a></li>
-					<li><a href="Geschiedenis.html">Geschiedenis</a></li>
+					<li><a href="index.php">Start</a></li>
+					<li><a href="index.php">Verplaatsen</a></li>
+					<li><a href="Geshiedenis.php">Geschiedenis</a></li>
 				</ul> 
 			</nav>
 		</p>
 		<br>
 		<br>
 		<br>
+		<br>
+		<br>
 		<p>
-			<table border="10">
+			<table border="10" ALIGN="center">
 				<tr>
 					<th>Datum van verplaatsing</th>
 					<th>Van</th>
@@ -36,20 +38,20 @@ require_once($_SERVER['DOCUMENT_ROOT']."/global/HTMLtools.php");
 					<th>Annuleren</th>
 				</tr>
 				<tr>
-					<td>12-3</td>
-					<td>7</td>
-					<td>3</td>
-					<td><img src="http://24fitclubheelsum.nl/wp-content/uploads/2013/04/vinkje.png" title="Dankje wel Nanda"></td>
-					<td><button type="button">Bewerk</button></td>
-					<td><button type="button">Annuleer</button></td>
+					<td><center>12-3-2013</center></td>
+					<td><center>7</center></td>
+					<td><center>3</center></td>
+					<td><center><img src="http://24fitclubheelsum.nl/wp-content/uploads/2013/04/vinkje.png" WIDTH=40 HEIGHT=40 title="Dankje wel Nanda"></center></td>
+					<td><center><button type="button"><a href="index.php">Bewerk</button></center></td>
+					<td><center><button type="button" onClick="alert('Deze functie werkt nog niet. Jammer joh!')">Annuleer</button></center></td>
 				</tr>
 				<tr>
-					<td>28-5</td>
-					<td>1</td>
-					<td>5</td>
-					<td><img src="http://www.zoninjeleven.nl/wp-content/uploads/2012/09/vinkje.gif"></td>
-					<td><button type="button">Bewerk</button></td>
-					<td><button type="button">Annuleer</button></td>
+					<td><center>28-5-2013</center></td>
+					<td><center>1</center></td>
+					<td><center>5</center></td>
+					<td><center><img src="http://www.zoninjeleven.nl/wp-content/uploads/2012/09/vinkje.gif" WIDTH=40 HEIGHT=40></center></td>
+					<td><center><button type="button"><a href="index.php">Bewerk</button></center></td>
+					<td><center><button type="button" onClick="alert('Deze functie werkt nog niet. Jammer joh!')">Annuleer</button></center></td>
 				</tr>
 			</table>
 		</p>
