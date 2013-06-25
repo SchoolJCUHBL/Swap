@@ -9,7 +9,7 @@ $vanuur = $_POST["vanUur"];
 $naaruur = $_POST["naarUur"];
 $commentaar = $_POST["Opmerking"];
 
-if ($resultaat = PDOinsert($leerlingnr, $datum, $dag, $vanuur, $naaruur, $commentaar)) {
+if (PDOinsert($leerlingnr, $datum, $dag, $vanuur, $naaruur, $commentaar)) {
 	header('Location: /Aanvraagscherm/Geshiedenis.php');
 }
 else{

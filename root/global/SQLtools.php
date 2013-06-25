@@ -25,7 +25,7 @@
 	}
 	
 	//PDO select functie
-	function PDOselect($lrlngnr) {
+	function PDOselectLN($lrlngnr) {
 		try {
 			//connect database
 			$db = new PDO('mysql:host=localhost;port=3307;dbname=hblwissels','root','usbw');
@@ -35,12 +35,33 @@
 			$stmt->bindParam(':leerlingnummer', $lrlngnr);
 			//voer het statement uit
 			$resultaat = $stmt->execute();
+			$table = $stmt->fetchAll();
 		}
 		catch(PDOException $e) {
 			echo $e->getMessage();
 		}
 		$db = NULL;
-		return $resultaat;
+		return $table;
+	}
+	
+		function PDOselectID($id, $lrlngnr) {
+		try {
+			//connect database
+			$db = new PDO('mysql:host=localhost;port=3307;dbname=hblwissels','root','usbw');
+			//prepare het statement zodat injection onmogelijk is.
+			$stmt = $db->prepare("SELECT * FROM Wissels WHERE id=:id AND leerlingnummer=:leerlingnummer");
+			//bind de parameter aan het statement
+			$stmt->bindParam(':id', $id);
+			$stmt->bindParam(':leerlingnummer', $lrlngnr);
+			//voer het statement uit
+			$resultaat = $stmt->execute();
+			$table = $stmt->fetchAll();
+		}
+		catch(PDOException $e) {
+			echo $e->getMessage();
+		}
+		$db = NULL;
+		return $table;
 	}
 	
 	//PDO update functie

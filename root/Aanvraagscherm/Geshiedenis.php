@@ -1,5 +1,9 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT']."/global/HTMLtools.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/global/SQLtools.php");
+session_start();
+
+$resultaat = PDOselectLN($_SESSION['leerlingnummer']);
 ?>
 
 
@@ -34,25 +38,35 @@ require_once($_SERVER['DOCUMENT_ROOT']."/global/HTMLtools.php");
 					<th>Van</th>
 					<th>Naar</th>
 					<th>Commentaar</th>
-					<th>Bewerken</th>
+                    <th>Geaccepteerd</th>
+					<th>Wijzigen</th>
 					<th>Annuleren</th>
 				</tr>
-				<tr>
-					<td><center>12-3-2013</center></td>
-					<td><center>7</center></td>
-					<td><center>3</center></td>
-					<td><center><img src="http://24fitclubheelsum.nl/wp-content/uploads/2013/04/vinkje.png" WIDTH=40 HEIGHT=40 title="Dankje wel Nanda"></center></td>
-					<td><center><button type="button"><a href="index.php">Bewerk</button></center></td>
-					<td><center><button type="button" onClick="alert('Deze functie werkt nog niet. Jammer joh!')">Annuleer</button></center></td>
-				</tr>
-				<tr>
-					<td><center>28-5-2013</center></td>
-					<td><center>1</center></td>
-					<td><center>5</center></td>
-					<td><center><img src="http://www.zoninjeleven.nl/wp-content/uploads/2012/09/vinkje.gif" WIDTH=40 HEIGHT=40></center></td>
-					<td><center><button type="button"><a href="index.php">Bewerk</button></center></td>
-					<td><center><button type="button" onClick="alert('Deze functie werkt nog niet. Jammer joh!')">Annuleer</button></center></td>
-				</tr>
+<?php
+	foreach($resultaat as $row) {
+	echo '<tr>';
+	echo '<td><center>'.$row['datum'].'</center></td>';
+	echo '<td><center>'.$row['vanuur'].'</center></td>';
+	echo '<td><center>'.$row['naaruur'].'</center></td>';
+	echo '<td><center>'.$row['commentaar'].'</center></td>';
+	echo '<td><center>';
+	if ($row['OK']==1){
+		echo '<img src="http://24fitclubheelsum.nl/wp-content/uploads/2013/04/vinkje.png" WIDTH=40 HEIGHT=40 title="Dankje wel Nanda">';
+	}
+	else{
+		echo '<img src="http://www.zoninjeleven.nl/wp-content/uploads/2012/09/vinkje.gif" WIDTH=40 HEIGHT=40>';
+	}
+	echo '</center></td>';
+	echo "<td><center><form action='null' method='post'>
+	<input type='hidden' name='verstopt' value=".$row['id'].">
+	<input type='submit' name='wijzig' value='wijzig'>
+	</form></center></td>";
+	echo "<td><center><form action='verwijderen.php' method='post'>
+	<input type='hidden' name='verstopt' value=".$row['id'].">
+	<input type='submit' name='verwijder' value='Annuleer'></form></center></td>";
+	echo '</tr>';
+	}
+?>
 			</table>
 		</p>
 	</body>
