@@ -10,7 +10,7 @@ $leerlingnummer = htmlspecialchars($_POST['leerlingnummer'],ENT_QUOTES);
 
 $password = $_POST['password']; 
 
-$sql = 'SELECT leerlingnummer, password FROM inlog WHERE leerlingnummer = :leerlingnummer';
+$sql = 'SELECT * FROM inlog WHERE leerlingnummer = :leerlingnummer';
 
 $statement = $db->prepare($sql);
 $statement->bindParam(':leerlingnummer', $leerlingnummer, PDO::PARAM_STR);
@@ -20,8 +20,9 @@ if ($statement->execute() && $row = $statement->fetch())
 
     if ( $row['password'] === $password )
     {
+		$_SESSION['MOD'] = $row['MOD'];
 		$_SESSION['leerlingnummer'] = $leerlingnummer;
-        header('Location: /aanvraagscherm/index.php');
+        header('Location: /Geschiedenis');
 		exit();
     }
 	else {

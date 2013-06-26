@@ -10,7 +10,7 @@ $naaruur = $_POST["naarUur"];
 $commentaar = $_POST["Opmerking"];
 
 if (PDOinsert($leerlingnr, $datum, $dag, $vanuur, $naaruur, $commentaar)) {
-	header('Location: /Aanvraagscherm/Geshiedenis.php');
+	header('Location: /Geschiedenis');
 }
 else{
 	die;

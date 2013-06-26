@@ -6,7 +6,7 @@ $leerlingnr = $_SESSION['leerlingnummer'];
 $id = $_POST["verstopt"];
 
 if (PDOdelete($id, $leerlingnr)) {
-	header('Location: /Aanvraagscherm/Geshiedenis.php');
+	header('Location: /Geschiedenis');
 }
 else{
 	die;

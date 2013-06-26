@@ -20,9 +20,8 @@ $resultaat = PDOselectLN($_SESSION['leerlingnummer']);
 		<p>
 			<nav id="menu">
 				<ul>
-					<li><a href="index.php">Start</a></li>
-					<li><a href="index.php">Verplaatsen</a></li>
-					<li><a href="Geshiedenis.php">Geschiedenis</a></li>
+					<li><a href="/Aanvragen">Verplaatsen</a></li>
+					<li><a href="/Logout">Uitloggen</a></li>
 				</ul> 
 			</nav>
 		</p>
