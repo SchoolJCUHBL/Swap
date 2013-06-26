@@ -49,7 +49,7 @@
 			//connect database
 			$db = new PDO('mysql:host=localhost;port=3307;dbname=hblwissels','root','usbw');
 			//prepare het statement zodat injection onmogelijk is.
-			$stmt = $db->prepare("SELECT * FROM Wissels WHERE datum = :datum");
+			$stmt = $db->prepare("SELECT * FROM Wissels WHERE datum = :datum ORDER BY vanuur, naaruur");
 			//bind de parameter aan het statement
 			$stmt->bindParam(':datum', $datum);
 			//voer het statement uit
