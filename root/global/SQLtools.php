@@ -55,7 +55,7 @@
 			$stmt->bindParam(':leerlingnummer', $lrlngnr);
 			//voer het statement uit
 			$resultaat = $stmt->execute();
-			$table = $stmt->fetchAll();
+			$table = $stmt->fetch();
 		}
 		catch(PDOException $e) {
 			echo $e->getMessage();

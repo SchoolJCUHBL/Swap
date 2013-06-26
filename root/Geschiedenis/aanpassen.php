@@ -1,13 +1,13 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT']."/global/HTMLtools.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/global/SQLtools.php");
 session_start();
 
 if (!isset($_SESSION['leerlingnummer'])){
 	header('Location: /Loginscherm');
 }
 
-$resultaat = PDOselectID($POST['id'], $_SESSION['leerlingnummer']);
-$resultaat as $row
+$resultaat = PDOselectID($_POST['verstopt'], $_SESSION['leerlingnummer']);
 ?>
 
 <!DOCTYPE HTML>
@@ -34,8 +34,8 @@ $resultaat as $row
 		<br> 
     
 		<form name="input" action="veranderen.php" method="POST">
-  			<input type="date" name="datum"  readonly = "readonly" value="<?php echo $row['datum'];?>">
-  			<input type="hidden" name=id value="<?php echo $row['id'] ?>">
+  			<input type="date" name="datum"  readonly = "readonly" value="<?php echo $resultaat['datum'];?>">
+  			<input type="hidden" name=id value="<?php echo $resultaat['id']; ?>">
   			<br>
 			<br>
 
@@ -55,7 +55,7 @@ $resultaat as $row
 
 			<br>
 	
-			<textarea name="Opmerking" rows=6 cols=24 maxlength=150 placeholder="max 150 tekens"><?php echo $row['opmerking']; ?></textarea>
+			<textarea name="Opmerking" rows=6 cols=24 maxlength=150 placeholder="max 150 tekens"><?php echo $resultaat['commentaar']; ?></textarea>
 
 			<br>
 
