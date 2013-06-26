@@ -35,7 +35,7 @@ $resultaat = PDOselectID($_POST['verstopt'], $_SESSION['leerlingnummer']);
     
 		<form name="input" action="veranderen.php" method="POST">
   			<input type="date" name="datum"  readonly = "readonly" value="<?php echo $resultaat['datum'];?>">
-  			<input type="hidden" name=id value="<?php echo $resultaat['id']; ?>">
+  			<input type="hidden" name="id" value="<?php echo $resultaat['id']; ?>">
   			<br>
 			<br>
 

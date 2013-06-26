@@ -65,7 +65,7 @@
 	}
 	
 	//PDO update functie
-	function PDOupdate($id, $lrlngnr, $datum, $vanuur, $naaruur, $commentaar) {
+	function PDOupdate($id, $lrlngnr, $vanuur, $naaruur, $commentaar) {
 		try {
 			//connect database
 			$db = new PDO('mysql:host=localhost;port=3307;dbname=hblwissels','root','usbw');
