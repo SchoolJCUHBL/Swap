@@ -27,7 +27,7 @@ require_once($_SERVER['DOCUMENT_ROOT']."/global/HTMLtools.php");
 		<br> 
     
 		<form name="input" action="insturen.php" method="POST">
-  			<input type="date" name="datum">
+  			<input type="date" name="datum" min="<?php echo date(Y-m-d);?>" max="<?php date('Y-m-d', strtotime('+1 year')); ?>" value="<?php echo date(Y-m-d);?>">
   			
   			<br>
 			<br>
