@@ -5,8 +5,7 @@ session_start();
 $db = new PDO('mysql:host=localhost;port=3307;dbname=hblwissels','root','usbw');
 
 //get the posted values
-$leerlingnummer = htmlspecialchars($_POST['leerlingnummer'],ENT_QUOTES);
-
+$leerlingnummer = $_POST['leerlingnummer'];
 
 $password = $_POST['password']; 
 
@@ -26,10 +25,10 @@ if ($statement->execute() && $row = $statement->fetch())
 		exit();
     }
 	else {
-		echo 'login error';
+		header('Location: /Loginscherm');
 	}
 }
 else {
-		echo 'login error';
+		header('Location: /Loginscherm');
 }
 ?>

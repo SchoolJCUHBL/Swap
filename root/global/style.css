@@ -7,8 +7,12 @@ nav, section{
 	display: block;
 }
 
+hr {
+ visibility: hidden;
+}
+
 p {
-	font-size:20px;
+	font-size: 20px;
 }
 
 header{

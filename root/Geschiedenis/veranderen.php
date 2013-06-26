@@ -6,6 +6,7 @@ if (!isset($_SESSION['leerlingnummer'])){
 	header('Location: /Loginscherm');
 }
 
+$id = $_POST['id']
 $leerlingnr = $_SESSION['leerlingnummer'];
 $datum = $_POST["datum"];
 $dag = date('D', strtotime($datum));
@@ -13,7 +14,7 @@ $vanuur = $_POST["vanUur"];
 $naaruur = $_POST["naarUur"];
 $commentaar = $_POST["Opmerking"];
 
-if (PDOinsert($leerlingnr, $datum, $dag, $vanuur, $naaruur, $commentaar)) {
+if (PDOupdate($id, $lrlngnr, $datum, $vanuur, $naaruur, $commentaar)) {
 	header('Location: /Geschiedenis');
 }
 else{

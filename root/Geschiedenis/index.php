@@ -3,6 +3,10 @@ require_once($_SERVER['DOCUMENT_ROOT']."/global/HTMLtools.php");
 require_once($_SERVER['DOCUMENT_ROOT']."/global/SQLtools.php");
 session_start();
 
+if (!isset($_SESSION['leerlingnummer'])){
+	header('Location: /Loginscherm');
+}
+
 $resultaat = PDOselectLN($_SESSION['leerlingnummer']);
 ?>
 
@@ -15,7 +19,7 @@ $resultaat = PDOselectLN($_SESSION['leerlingnummer']);
 		<title>Geschiedenis LL</title>
 	</head>
 
-	<body>
+	<body style="padding-left: 20%;">
 		<?php Constructheader("Geschiedenis"); ?>
 		<p>
 			<nav id="menu">
@@ -31,7 +35,7 @@ $resultaat = PDOselectLN($_SESSION['leerlingnummer']);
 		<br>
 		<br>
 		<p>
-			<table border="10" ALIGN="center">
+			<table border="10">
 				<tr>
 					<th>Datum van verplaatsing</th>
 					<th>Van</th>
@@ -56,7 +60,7 @@ $resultaat = PDOselectLN($_SESSION['leerlingnummer']);
 		echo '<img src="http://www.zoninjeleven.nl/wp-content/uploads/2012/09/vinkje.gif" WIDTH=40 HEIGHT=40>';
 	}
 	echo '</center></td>';
-	echo "<td><center><form action='null' method='post'>
+	echo "<td><center><form action='aanpassen.php' method='post'>
 	<input type='hidden' name='verstopt' value=".$row['id'].">
 	<input type='submit' name='wijzig' value='wijzig'>
 	</form></center></td>";

@@ -6,6 +6,8 @@ if (!isset($_SESSION['leerlingnummer'])){
 	header('Location: /Loginscherm');
 }
 
+$resultaat = PDOselectID($POST['id'], $_SESSION['leerlingnummer']);
+$resultaat as $row
 ?>
 
 <!DOCTYPE HTML>
@@ -14,11 +16,11 @@ if (!isset($_SESSION['leerlingnummer'])){
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="aanvraagscherm.css">
 		<link rel="stylesheet" type="text/css" href="/global/style.css">
-		<title>Aanvragen</title>
+		<title>Aanpassen</title>
 	</head>
 
 	<body>
-		<?php Constructheader("Aanvragen"); ?>
+		<?php Constructheader("Aanpassen"); ?>
 		
 		<nav id="menu">
 			<ul>
@@ -31,9 +33,9 @@ if (!isset($_SESSION['leerlingnummer'])){
 		<br>
 		<br> 
     
-		<form name="input" action="insturen.php" method="POST">
-  			<input type="date" name="datum" min="<?php echo date('Y-m-d');?>" max="<?php echo date('Y-m-d', strtotime('+3 week')); ?>" value="<?php echo date('Y-m-d');?>">
-  			
+		<form name="input" action="veranderen.php" method="POST">
+  			<input type="date" name="datum"  readonly = "readonly" value="<?php echo $row['datum'];?>">
+  			<input type="hidden" name=id value="<?php echo $row['id'] ?>">
   			<br>
 			<br>
 
@@ -53,7 +55,7 @@ if (!isset($_SESSION['leerlingnummer'])){
 
 			<br>
 	
-			<textarea name="Opmerking" rows=6 cols=24 maxlength=150 placeholder="max 150 tekens"></textarea>
+			<textarea name="Opmerking" rows=6 cols=24 maxlength=150 placeholder="max 150 tekens"><?php echo $row['opmerking']; ?></textarea>
 
 			<br>
 
