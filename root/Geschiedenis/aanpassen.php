@@ -40,11 +40,11 @@ $resultaat = PDOselectID($_POST['verstopt'], $_SESSION['leerlingnummer']);
 			<br>
 
 			Van het <?php
-			EZDropMenu("vanUur", 9);
+			DropMenu("vanUur", 1, 9, $resultaat['vanuur']);
 			?>
 			naar het 
 			<?php
-			EZDropMenu("naarUur", 9);
+			DropMenu("naarUur", 1, 9, $resultaat['naaruur']);
 			?>
 			uur
   

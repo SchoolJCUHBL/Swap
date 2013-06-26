@@ -13,15 +13,18 @@
 // de begin waarde default dus naar 1, naast de uren kiezen kunnen we dit evt ook voor datums gebruiken.
 
 	function EZDropMenu($name, $end) {
-		DropMenu($name, 1, $end);
+		DropMenu($name, 1, $end, 0);
 	}
 	
-	function DropMenu($name, $start, $end) {
+	function DropMenu($name, $start, $end, $selected) {
 		if (is_string($name) && is_numeric($end) && is_numeric($start)) {
 			//Deze for loop bouwt het dropdown menu.
 			echo "<select name=" , $name , ">";
 			for ($i = $start; $i <= $end; $i++) {
-				echo "<option value=" , $i , ">$i","e","</option>";
+				echo "<option value=";
+				echo $i;
+				if ($i == $selected && $selected != 0) { echo " selected"; }
+				echo ">$i","e","</option>";
 			}
 			echo "</select>";
 		}
