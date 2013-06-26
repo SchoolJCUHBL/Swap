@@ -1,7 +1,9 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT']."/global/HTMLtools.php");
+//require_once($_SERVER['DOCUMENT_ROOT']."/global/HTMLtools.php");
+header('Location: /Loginscherm');
 ?>
 
+<!--
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,17 +12,17 @@ require_once($_SERVER['DOCUMENT_ROOT']."/global/HTMLtools.php");
 	</head>
 
 	<body>
-	<?php Constructheader("Test"); ?>
+	<?php //Constructheader("Test"); ?>
     	<p>
 			<?php 
             // tijdelijke testcode om te laten zien hoe deze twee functies werken
-                EZDropMenu("test", 9); 
-                echo "<br>";
-                DropMenu("test2", 3, 9);
-                echo "<br>";
-                DropMenu("test3", 23, 31);
-                echo "<br>";
-                EZDropMenu("test3", 100);
+                //EZDropMenu("test", 9); 
+               // echo "<br>";
+               // DropMenu("test2", 3, 9);
+              //  echo "<br>";
+               // DropMenu("test3", 23, 31);
+               // echo "<br>";
+               // EZDropMenu("test3", 100);
             ?>
         </p>
         <p>
@@ -28,3 +30,4 @@ require_once($_SERVER['DOCUMENT_ROOT']."/global/HTMLtools.php");
         </p>
 	</body>
 </html>
+-->
