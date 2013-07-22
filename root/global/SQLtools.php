@@ -127,14 +127,13 @@
 	}
 	
 		//PDO accept functie
-	function PDOaccept($id, $lrlngnr, $accept) {
+	function PDOaccept($id, $accept) {
 		try {
 			//connect database
 			$db = new PDO('mysql:host=localhost;port=3307;dbname=hblwissels','root','usbw');
 			//prepare het statement zodat injection onmogelijk is.
-			$stmt = $db->prepare("UPDATE Wissels SET OK=:OK WHERE leerlingnummer=:leerlingnummer AND id=:id");
+			$stmt = $db->prepare("UPDATE Wissels SET OK=:OK WHERE id=:id");
 			//bind de parameters aan het statement
-			$stmt->bindParam(':leerlingnummer', $lrlngnr);
 			$stmt->bindParam(':OK', $accept);
 			$stmt->bindParam(':id', $id);
 			//voer het statement uit
