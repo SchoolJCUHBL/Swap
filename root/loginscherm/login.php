@@ -16,10 +16,10 @@ $statement->bindParam(':leerlingnummer', $leerlingnummer, PDO::PARAM_STR);
 
 if ($statement->execute() && $row = $statement->fetch())
 {
-
-    if ( $row['password'] === $password )
+	// $row['password'] === $password 
+    if (crypt($password, $row['password']) === $row['password'])
     {
-		$_SESSION['MOD'] = $row['MOD'];
+		$_SESSION['MOD'] = $row['Moderator'];
 		$_SESSION['leerlingnummer'] = $leerlingnummer;
         header('Location: /Geschiedenis');
 		exit();

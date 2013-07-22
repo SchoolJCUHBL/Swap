@@ -12,7 +12,7 @@ src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
 </script>
 <![endif]-->
 <meta charset="utf-8">
-<title>Informatica</title>
+<title>Swap Login</title>
 
 </head>
 <body>
@@ -21,7 +21,7 @@ src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
 <form name="login" method="post" action="login.php">
 <table cellpadding="4" border="0">
    <tr>
-      <td align="center" height="24" width="282">Gebruiker:</td>
+      <td align="center" height="24" width="282">Leerlingnummer:</td>
       <td align="left" height="24" width="170">
  
        <input name="leerlingnummer" type="text"  type="hidden" value="">

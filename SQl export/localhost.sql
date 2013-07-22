@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Machine: localhost
--- Genereertijd: 29 mei 2013 om 14:20
+-- Genereertijd: 22 jul 2013 om 12:27
 -- Serverversie: 5.5.20
 -- PHP-Versie: 5.3.9
 
@@ -30,10 +30,10 @@ USE `hblwissels`;
 
 CREATE TABLE IF NOT EXISTS `inlog` (
   `leerlingnummer` varchar(6) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `password` char(60) NOT NULL,
   `voornaam` varchar(20) NOT NULL,
   `achternaam` varchar(40) NOT NULL,
-  `MOD` tinyint(1) NOT NULL DEFAULT '0',
+  `Moderator` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`leerlingnummer`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -41,12 +41,13 @@ CREATE TABLE IF NOT EXISTS `inlog` (
 -- Gegevens worden uitgevoerd voor tabel `inlog`
 --
 
-INSERT INTO `inlog` (`leerlingnummer`, `password`, `voornaam`, `achternaam`, `MOD`) VALUES
-('000011', 'yoloswag', 'Malle', 'Pietje', 0),
-('223322', 'abbacababba', 'Ad', 'Aardsma', 0),
-('334455', 'macarena', 'Bert', 'van Gindert', 0),
-('nan', 'testcase', 'Nanda', 'Jansen', 1),
-('Tex', 'TEstCase', 'Testkees', 'Moderator', 1);
+INSERT INTO `inlog` (`leerlingnummer`, `password`, `voornaam`, `achternaam`, `Moderator`) VALUES
+('000011', '$2a$12$528f19b8adfcebde1f42duzXIcUd6QNd/0L9LN9SIuPc/qIRVdIbO', 'Malle', 'Pietje', 0),
+('121212', '$2a$12$4e58f98f675ae31d92e8cuptrW8Mr78WrfWP1Pd7wJDtNDKAscT5i', 'Jan', 'Aartsma', 0),
+('223322', '$2a$12$a66fa2f81306c2adcb6d5uHyyUU3RjGD4rZYLaEa4sy9ql4Cfb72a', 'ad', 'Aardsma', 0),
+('334455', '$2a$12$cf4b888534db08e99d9c9uCxU4vowp7atKBwkQb1O8pv3y2p/L7dq', 'Bert', 'van Gindert', 0),
+('nan', '$2a$12$e06963ceba00acb3519b9OlVfmL2TfkKFYBf3iMw8E7k7hD5hwM/2', 'Nanda', 'Jansen', 1),
+('tex', '$2a$12$404142587cdad9ccf4275ursCN5HOyfBlAu8YrWlHXX.GVHblATwm', 'TestKees', 'Moderator', 1);
 
 -- --------------------------------------------------------
 
@@ -64,7 +65,15 @@ CREATE TABLE IF NOT EXISTS `wissels` (
   `commentaar` text NOT NULL,
   `OK` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Gegevens worden uitgevoerd voor tabel `wissels`
+--
+
+INSERT INTO `wissels` (`id`, `leerlingnummer`, `datum`, `dag`, `vanuur`, `naaruur`, `commentaar`, `OK`) VALUES
+(1, 223322, '2013-06-25', 'Thu', 3, 7, 'Gewoon uitslapen, je weet wel...', 0),
+(2, 334455, '1212-12-12', 'Thu', 4, 6, 'asdasdasdsada', 1);
 --
 -- Database: `test`
 --
