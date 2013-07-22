@@ -22,7 +22,7 @@ if (!isset($_SESSION['leerlingnummer'])){
 		
 		<nav id="menu">
 			<ul>
-				<li><a href="/Geschiedenis">Geschiedenis</a></li>
+				<li><?php if (!$_SESSION['MOD']) { echo '<a href="/Geschiedenis">Geschiedenis';} else { echo '<a href="/Goedkeurscherm">StudiePanel'; } ?></a></li>
 				<li><a href="/Logout">Uitloggen</a></li>
 			</ul> 
 		</nav>
@@ -32,7 +32,13 @@ if (!isset($_SESSION['leerlingnummer'])){
 		<br> 
     
 		<form name="input" action="insturen.php" method="POST">
-  			<input type="date" name="datum" min="<?php echo date('Y-m-d');?>" max="<?php echo date('Y-m-d', strtotime('+3 week')); ?>" value="<?php echo date('Y-m-d');?>">
+  			<?php
+				if ($_SESSION['MOD']) {
+					echo '<input type="text" name="nummer" value="" maxlength="6" placeholder="leerlingnummer"><br><br>';
+				}
+			?>
+            
+            <input type="date" name="datum" min="<?php echo date('Y-m-d');?>" max="<?php echo date('Y-m-d', strtotime('+3 week')); ?>" value="<?php echo date('Y-m-d');?>">
   			
   			<br>
 			<br>

@@ -16,19 +16,17 @@ $resultaat = PDOselectLN($_SESSION['leerlingnummer']);
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="/global/style.css">
-		<title>Geschiedenis LL</title>
+		<title>Geschiedenis</title>
 	</head>
 
-	<body style="padding-left: 20%;">
+	<body>
 		<?php Constructheader("Geschiedenis"); ?>
-		<p>
 			<nav id="menu">
 				<ul>
 					<li><a href="/Aanvragen">Verplaatsen</a></li>
 					<li><a href="/Logout">Uitloggen</a></li>
 				</ul> 
 			</nav>
-		</p>
 		<br>
 		<br>
 		<br>

@@ -21,14 +21,22 @@ if ($statement->execute() && $row = $statement->fetch())
     {
 		$_SESSION['MOD'] = $row['Moderator'];
 		$_SESSION['leerlingnummer'] = $leerlingnummer;
-        header('Location: /Geschiedenis');
-		exit();
+		if (!$_SESSION['MOD']) {
+			header('Location: /Geschiedenis');
+			exit();
+		}
+		else {
+			header('Location: /Goedkeurscherm');
+			exit();
+		}
     }
 	else {
 		header('Location: /Loginscherm');
+		exit();
 	}
 }
 else {
 		header('Location: /Loginscherm');
+		exit();
 }
 ?>

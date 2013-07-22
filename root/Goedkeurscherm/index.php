@@ -31,11 +31,11 @@ $resultaat = PDOselectDate($datum);
 		<title>Goedkeuren</title>
 	</head>
 	<body>
-		<?php Constructheader("Geschiedenis"); ?>
+		<?php Constructheader("StudiePanel"); ?>
 		<nav id="menu">
 			<ul>
-				<li><a href="#">Ander Scherm</a></li>
-				<li><a href="#">Ander Scherm</a></li>
+				<li><a href="/Aanvragen">Verplaatsen</a></li>
+				<li><a href="/Logout">Uitloggen</a></li>
 			</ul>
 		</nav>	
 		<br><br><br>

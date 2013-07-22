@@ -6,7 +6,12 @@ if (!isset($_SESSION['leerlingnummer'])){
 	header('Location: /Loginscherm');
 }
 
-$leerlingnr = $_SESSION['leerlingnummer'];
+if ($_SESSION['MOD']){
+	$leerlingnr = $_POST['nummer'];
+}
+else {
+	$leerlingnr = $_SESSION['leerlingnummer'];
+}
 $datum = $_POST["datum"];
 $dag = date('D', strtotime($datum));
 $vanuur = $_POST["vanUur"];
