@@ -1,6 +1,6 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT']."/global/HTMLtools.php");
-require_once($_SERVER['DOCUMENT_ROOT']."/global/SQLtools.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/global/SQLtoolsv2.php");
 session_start();
 
 if (!isset($_SESSION['leerlingnummer'])){
@@ -9,16 +9,16 @@ if (!isset($_SESSION['leerlingnummer'])){
 
 if (isset($_POST['id'])) {
 	if ($_POST['OK'] == 0) {
-		PDOaccept($_POST['id'], 1);
+		PDOuniversal(7, $_POST['id'], "", "", "", "", "", "", 1);
 	}
 	else{
-		PDOaccept($_POST['id'], 0);
+		PDOuniversal(7, $_POST['id'], "", "", "", "", "", "", 0);
 	}
 }
 
 if (isset($_POST['datum'])){
 $datum = $_POST['datum'];
-$resultaat = PDOselectDate($datum);
+$resultaat = PDOuniversal(3, "", "", $datum, "", "", "", "", "");
 }
 
 ?>

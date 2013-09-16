@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT']."/global/SQLtools.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/global/SQLtoolsv2.php");
 session_start();
 
 if (!isset($_SESSION['leerlingnummer'])){
@@ -18,7 +18,7 @@ $vanuur = $_POST["vanUur"];
 $naaruur = $_POST["naarUur"];
 $commentaar = $_POST["Opmerking"];
 
-if (PDOinsert($leerlingnr, $datum, $dag, $vanuur, $naaruur, $commentaar)) {
+if (PDOuniversal(1, "",$leerlingnr, $datum, $dag, $vanuur, $naaruur, $commentaar, 0)) {
 	header('Location: /Geschiedenis');
 }
 else{

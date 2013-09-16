@@ -23,20 +23,20 @@
 					$sql = "DELETE FROM Wissels WHERE leerlingnummer=:leerlingnummer AND id=:id";
 					break;
 				case 7:
-					$sql = "UPDATE Wissels SET OK=:OK WHERE id=:id"
+					$sql = "UPDATE Wissels SET OK=:OK WHERE id=:id";
 					break;
 				default:
-					throw new Exception('no mode set!')
+					try{throw new Exception('no mode set!');} catch (Exception $r) {echo $r->getMessage();}
 			}
 			$stmt = $db->prepare($sql);
-			$stmt->bindParam(':id', $id);
-			$stmt->bindParam(':leerlingnummer', $lrlngnr);
-			$stmt->bindParam(':datum', $datum);
-			$stmt->bindParam(':dag', $dag);
-			$stmt->bindParam(':vanuur', $vanuur);
-			$stmt->bindParam(':naaruur', $naaruur);
-			$stmt->bindParam(':commentaar', $commentaar);
-			$stmt->bindParam(':OK', $accept);
+			if ($mode == 1 || $mode == 2 || $mode == 4 || $mode == 5 || $mode == 6) $stmt->bindParam(':leerlingnummer', $lrlngnr);
+			if ($mode == 1 || $mode == 3) $stmt->bindParam(':datum', $datum);
+			if ($mode == 1) $stmt->bindParam(':dag', $dag);
+			if ($mode == 1 || $mode == 5) $stmt->bindParam(':vanuur', $vanuur);
+			if ($mode == 1 || $mode == 5) $stmt->bindParam(':naaruur', $naaruur);
+			if ($mode == 1 || $mode == 5) $stmt->bindParam(':commentaar', $commentaar);
+			if ($mode == 4 || $mode == 5 || $mode == 6 || $mode == 7) $stmt->bindParam(':id', $id);
+			if ($mode == 7) $stmt->bindParam(':OK', $accept);
 			$resultaat = $stmt->execute();
 			switch($mode) {
 				case 2:

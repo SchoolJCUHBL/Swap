@@ -1,13 +1,17 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT']."/global/HTMLtools.php");
-require_once($_SERVER['DOCUMENT_ROOT']."/global/SQLtools.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/global/SQLtoolsv2.php");
 session_start();
 
 if (!isset($_SESSION['leerlingnummer'])){
 	header('Location: /Loginscherm');
 }
 
-$resultaat = PDOselectLN($_SESSION['leerlingnummer']);
+if (!isset($_SESSION['MOD'])){
+	header('Location: /Goedkeurscherm');
+}
+
+$resultaat = PDOuniversal(2, "", $_SESSION['leerlingnummer'], "", "", "", "", "", "");
 ?>
 
 

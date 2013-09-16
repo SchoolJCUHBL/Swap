@@ -16,6 +16,7 @@ $statement->bindParam(':leerlingnummer', $leerlingnummer, PDO::PARAM_STR);
 
 if ($statement->execute() && $row = $statement->fetch())
 {
+	$db = NULL;
 	// $row['password'] === $password 
     if (crypt($password, $row['password']) === $row['password'])
     {
